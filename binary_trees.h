@@ -96,4 +96,9 @@ size_t tree_size_h(const binary_tree_t *tree);
 void _preorder(heap_t *tree, heap_t **node, size_t height);
 int heap_extract(heap_t **root);
 int *heap_to_sorted_array(heap_t *heap, size_t *size);
+
+size_t height(const binary_tree_t *tree);
+int balance(const binary_tree_t *tree);
+avl_t *avl_insert_recursive(avl_t **tree, avl_t *parent,
+		avl_t **new, int value);
 #endif /* _BINARY_TREES_H_ */
