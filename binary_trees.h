@@ -5,6 +5,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 /**
  * struct binary_tree_s - Binary tree node
@@ -83,5 +84,8 @@ avl_t *avl_remove(avl_t *root, int value);
 avl_t *sorted_array_to_avl(int *array, size_t size);
 avl_t *sorted_array_to_avl_recursive(int *array, size_t start,
                 size_t end, avl_t *parent);
-
+int is_max_heap(const binary_tree_t *tree);
+int is_complete(const binary_tree_t *tree, size_t index, size_t nodes, size_t count);
+size_t count_nodes(const binary_tree_t *tree);
+int binary_tree_is_heap(const binary_tree_t *tree);
 #endif /* _BINARY_TREES_H_ */
