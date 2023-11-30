@@ -1,6 +1,7 @@
 #ifndef _BINARY_TREES_H_
 #define _BINARY_TREES_H_
 
+#include "limits.h"
 #include <stddef.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -19,7 +20,10 @@ typedef struct binary_tree_s
 	struct binary_tree_s *parent;
 	struct binary_tree_s *left;
 	struct binary_tree_s *right;
-} binary_tree_t;
+}binary_tree_t;
+
+typedef struct binary_tree_s binary_tree_t;
+typedef struct binary_tree_s bst_t;
 
 
 /**
@@ -58,4 +62,7 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t
 levelorder_queue_t *create_node(binary_tree_t *node);
 void free_queue(levelorder_queue_t *head);
 binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
+binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
+int binary_tree_is_bst(const binary_tree_t *tree);
+int is_bst_help(const binary_tree_t *tree, int lo, int hi);
 #endif /* _BINARY_TREES_H_ */
